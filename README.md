@@ -1,9 +1,12 @@
 # NSAI Data - Enterprise Autonomous Research Platform
 
 [![API Status](https://status.nsaidata.com/api/badge/status)](https://status.nsaidata.com)
-[![SDK Version](https://img.shields.io/pypi/v/nsai)](https://pypi.org/project/nsai/)
-[![npm version](https://img.shields.io/npm/v/nsai-sdk)](https://www.npmjs.com/package/nsai-sdk)
+[![Python SDK](https://img.shields.io/pypi/v/nsai?label=Python%20SDK)](https://pypi.org/project/nsai/)
+[![npm version](https://img.shields.io/npm/v/nsai-sdk?label=JS%20SDK)](https://www.npmjs.com/package/nsai-sdk)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue)](https://docs.nsaidata.com)
+[![License](https://img.shields.io/badge/license-Commercial-red)](LICENSE)
+[![SOC2](https://img.shields.io/badge/SOC2-Compliant-green)](https://nsaidata.com/security)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.0-green)](openapi.yaml)
 
 Transform complex questions into comprehensive research reports in seconds with AI-powered autonomous agents.
 

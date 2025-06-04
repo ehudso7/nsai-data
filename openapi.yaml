@@ -1,0 +1,176 @@
+openapi: 3.0.0
+info:
+  title: NSAI Data API
+  description: Enterprise Autonomous Research Platform API
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@nsaidata.com
+    url: https://docs.nsaidata.com
+  license:
+    name: Commercial
+    url: https://nsaidata.com/terms
+
+servers:
+  - url: https://api.nsaidata.com/v1
+    description: Production server
+
+security:
+  - bearerAuth: []
+
+paths:
+  /research/query:
+    post:
+      summary: Create Research Query
+      operationId: createResearch
+      tags:
+        - Research
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResearchRequest'
+      responses:
+        '200':
+          description: Research query created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+
+  /research/status/{research_id}:
+    get:
+      summary: Get Research Status
+      operationId: getResearchStatus
+      tags:
+        - Research
+      parameters:
+        - name: research_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Research status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchStatus'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    ResearchRequest:
+      type: object
+      required:
+        - query
+      properties:
+        query:
+          type: string
+          description: The research question or topic
+          maxLength: 5000
+        output_format:
+          type: string
+          enum: [markdown, json, html]
+          default: markdown
+        max_sources:
+          type: integer
+          minimum: 1
+          maximum: 50
+          default: 10
+        enable_validation:
+          type: boolean
+          default: true
+        include_sources:
+          type: boolean
+          default: true
+        webhook_url:
+          type: string
+          format: uri
+
+    ResearchResponse:
+      type: object
+      properties:
+        research_id:
+          type: string
+        status:
+          type: string
+          enum: [pending, processing, completed, failed]
+        report:
+          type: string
+        metadata:
+          type: object
+        sources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Source'
+        duration_ms:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+
+    ResearchStatus:
+      type: object
+      properties:
+        research_id:
+          type: string
+        status:
+          type: string
+        progress:
+          type: integer
+          minimum: 0
+          maximum: 100
+        current_step:
+          type: string
+
+    Source:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+        title:
+          type: string
+        snippet:
+          type: string
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    
+    RateLimited:
+      description: Rate limit exceeded
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+          description: Seconds until rate limit reset

@@ -1,0 +1,20 @@
+# CODEOWNERS for NSAI Data
+# These owners will be the default owners for everything in the repo
+
+# Global owners
+* @ehudso7
+
+# SDK specific owners
+/sdk/python/ @ehudso7
+/sdk/javascript/ @ehudso7
+
+# Documentation
+/docs/ @ehudso7
+*.md @ehudso7
+
+# Frontend
+/app/ @ehudso7
+/components/ @ehudso7
+
+# Examples
+/examples/ @ehudso7
