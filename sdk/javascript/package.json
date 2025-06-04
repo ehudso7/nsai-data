@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/ehudso7/nsai-data/issues"
   },
-  "homepage": "https://nsai-data.com",
+  "homepage": "https://nsaidata.com",
   "dependencies": {
     "axios": "^1.6.0"
   },

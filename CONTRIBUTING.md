@@ -137,8 +137,8 @@ Fixes #123
 ## 📞 Questions?
 
 - **Discord**: [Join our community](https://discord.gg/nsai-data)
-- **Email**: developers@nsai-data.com
-- **Documentation**: [https://docs.nsai-data.com](https://docs.nsai-data.com)
+- **Email**: developers@nsaidata.com
+- **Documentation**: [https://docs.nsaidata.com](https://docs.nsaidata.com)
 
 ## ⚖️ Legal
 

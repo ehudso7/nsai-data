@@ -9,8 +9,8 @@ By accessing or using NSAI Data services ("Service") operated by NSAI Data, Inc.
 ## 2. Description of Service
 
 NSAI Data provides an enterprise-grade autonomous research platform accessible exclusively through:
-- Our web application at https://nsai-data.com
-- Our official API at https://api.nsai-data.com
+- Our web application at https://nsaidata.com
+- Our official API at https://api.nsaidata.com
 - Our official SDKs (Python, JavaScript, and others)
 
 ## 3. Acceptable Use
@@ -58,7 +58,7 @@ NSAI Data provides an enterprise-grade autonomous research platform accessible e
 
 ## 7. Fees and Payment
 
-- Service fees are described at https://nsai-data.com/pricing
+- Service fees are described at https://nsaidata.com/pricing
 - Fees are non-refundable except as required by law
 - We may change pricing with 30 days notice
 - Overdue accounts may be suspended
@@ -116,9 +116,9 @@ These Terms are governed by the laws of Delaware, USA, without regard to conflic
 ## 15. Contact Information
 
 For questions about these Terms:
-- Email: legal@nsai-data.com
+- Email: legal@nsaidata.com
 - Address: NSAI Data, Inc., Delaware, USA
-- Support: support@nsai-data.com
+- Support: support@nsaidata.com
 
 ## 16. Entire Agreement
 

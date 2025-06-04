@@ -1,6 +1,6 @@
 # NSAI Python SDK
 
-Official Python SDK for [NSAI Data](https://nsai-data.com) - Enterprise Autonomous Research Platform.
+Official Python SDK for [NSAI Data](https://nsaidata.com) - Enterprise Autonomous Research Platform.
 
 ## Installation
 
@@ -23,7 +23,7 @@ print(response.report)
 
 ## Authentication
 
-Get your API key from [https://nsai-data.com/settings/api-keys](https://nsai-data.com/settings/api-keys)
+Get your API key from [https://nsaidata.com/settings/api-keys](https://nsaidata.com/settings/api-keys)
 
 You can provide your API key in two ways:
 
@@ -186,6 +186,6 @@ Get API usage statistics.
 
 ## Support
 
-- Documentation: [https://docs.nsai-data.com](https://docs.nsai-data.com)
-- Support: support@nsai-data.com
+- Documentation: [https://docs.nsaidata.com](https://docs.nsaidata.com)
+- Support: support@nsaidata.com
 - Issues: [GitHub Issues](https://github.com/ehudso7/nsai-data/issues)

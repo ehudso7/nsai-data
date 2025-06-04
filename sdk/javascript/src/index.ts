@@ -85,7 +85,7 @@ export class RateLimitError extends NSAIError {
  */
 export class NSAIClient {
   private readonly client: AxiosInstance;
-  private static readonly BASE_URL = 'https://api.nsai-data.com/v1';
+  private static readonly BASE_URL = 'https://api.nsaidata.com/v1';
 
   constructor(
     private apiKey: string,

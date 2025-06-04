@@ -22,7 +22,7 @@ class NSAIClient:
         >>> print(response.report)
     """
     
-    BASE_URL = "https://api.nsai-data.com/v1"
+    BASE_URL = "https://api.nsaidata.com/v1"
     
     def __init__(
         self,
