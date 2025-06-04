@@ -1,0 +1,44 @@
+{
+  "name": "nsai-sdk",
+  "version": "1.0.0",
+  "description": "Official JavaScript SDK for NSAI Data - Enterprise Autonomous Research Platform",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "lint": "eslint src/**/*.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehudso7/nsai-data.git"
+  },
+  "keywords": [
+    "nsai",
+    "research",
+    "ai",
+    "api",
+    "sdk"
+  ],
+  "author": "NSAI Data",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ehudso7/nsai-data/issues"
+  },
+  "homepage": "https://nsai-data.com",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.50.0",
+    "jest": "^29.7.0",
+    "rollup": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.0.0"
+  }
+}

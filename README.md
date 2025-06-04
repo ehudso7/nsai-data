@@ -1,231 +1,190 @@
 # NSAI Data - Enterprise Autonomous Research Platform
 
-[![Deploy Status](https://github.com/ehudso7/nsai-data/workflows/Deploy%20NSAI%20Data/badge.svg)](https://github.com/ehudso7/nsai-data/actions)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![API Status](https://status.nsai-data.com/api/badge/status)](https://status.nsai-data.com)
+[![SDK Version](https://img.shields.io/pypi/v/nsai)](https://pypi.org/project/nsai/)
+[![npm version](https://img.shields.io/npm/v/nsai-sdk)](https://www.npmjs.com/package/nsai-sdk)
+[![Documentation](https://img.shields.io/badge/docs-latest-blue)](https://docs.nsai-data.com)
 
 Transform complex questions into comprehensive research reports in seconds with AI-powered autonomous agents.
 
-## 🚀 Features
+🌐 **Access NSAI Data at: [https://nsai-data.com](https://nsai-data.com)**
 
-- **Autonomous Research Agents**: Multi-agent system that analyzes queries, searches the web, extracts content, generates insights, and formats professional reports
-- **Enterprise-Grade Architecture**: Built with FastAPI, featuring rate limiting, comprehensive error handling, and structured logging
-- **Web Scraping at Scale**: Integrated Firecrawl with fallback mechanisms for reliable data extraction
-- **AI-Powered Analysis**: GPT-4 Turbo integration for intelligent query understanding and insight generation
-- **Plugin System**: WASI-based plugin architecture for extending functionality
-- **Real-time Progress**: WebSocket support for streaming research progress
-- **Professional UI**: Responsive Tailwind CSS interface with live updates
-- **Production Ready**: Docker deployment, CI/CD pipeline, monitoring, and security best practices
+## 🚀 What is NSAI Data?
 
-## 📋 Prerequisites
+NSAI Data is an enterprise-grade SaaS platform that revolutionizes research through autonomous AI agents. Simply ask a question, and our multi-agent system will:
 
-- Python 3.11+
-- Docker & Docker Compose
-- OpenAI API Key
-- (Optional) Firecrawl API Key
-- (Optional) Stripe API Keys for billing
-- (Optional) SendGrid API Key for emails
+- 🔍 Analyze your query and develop search strategies
+- 🌐 Search and discover relevant sources across the web
+- 📊 Extract and process information intelligently
+- 💡 Generate insights and synthesize findings
+- 📄 Create professional, fact-checked reports
 
-## 🛠️ Quick Start
+All in seconds, not hours.
 
-### 1. Clone the repository
+## 💻 Quick Start
+
+### Installation
+
+**Python:**
 ```bash
-git clone https://github.com/ehudso7/nsai-data.git
-cd nsai-data
+pip install nsai
 ```
 
-### 2. Set up environment variables
+**JavaScript/TypeScript:**
 ```bash
-cp .env.example .env
-# Edit .env with your API keys and configuration
+npm install nsai-sdk
+# or
+yarn add nsai-sdk
 ```
 
-### 3. Run with Docker Compose
-```bash
-docker-compose up -d
+### Get Your API Key
+
+1. Sign up at [https://nsai-data.com](https://nsai-data.com)
+2. Navigate to Settings → API Keys
+3. Create a new API key
+
+### Basic Usage
+
+**Python Example:**
+```python
+from nsai import NSAIClient
+
+# Initialize client
+client = NSAIClient(api_key="your-api-key")
+
+# Create a research query
+response = client.research(
+    "What are the latest breakthroughs in quantum computing?",
+    max_sources=20,
+    output_format="markdown"
+)
+
+# Print the report
+print(response.report)
+print(f"Research completed in {response.duration_ms}ms")
 ```
 
-### 4. Access the application
-- Web UI: http://localhost
-- API Docs: http://localhost:8000/docs
-- Prometheus: http://localhost:9090
-- Grafana: http://localhost:3000
+**JavaScript Example:**
+```javascript
+import { NSAIClient } from 'nsai-sdk';
 
-## 🏗️ Architecture
+// Initialize client
+const client = new NSAIClient('your-api-key');
 
-```
-NSAI Data Architecture
-├── Frontend (Tailwind CSS + Alpine.js)
-│   └── Responsive Research Interface
-├── Backend (FastAPI)
-│   ├── Multi-Agent System
-│   │   ├── Query Analyzer
-│   │   ├── Web Search Agent
-│   │   ├── Content Extractor
-│   │   ├── Insight Generator
-│   │   ├── Report Formatter
-│   │   └── Validation Agent
-│   ├── Integrations
-│   │   ├── OpenAI GPT-4
-│   │   ├── Firecrawl
-│   │   ├── Stripe
-│   │   └── SendGrid
-│   └── Core Systems
-│       ├── Authentication
-│       ├── Rate Limiting
-│       ├── Caching (Redis)
-│       └── Monitoring
-└── Infrastructure
-    ├── Docker Containers
-    ├── PostgreSQL
-    ├── Redis
-    └── Nginx
+// Create a research query
+const response = await client.research(
+    'What are the latest breakthroughs in quantum computing?',
+    {
+        maxSources: 20,
+        outputFormat: 'markdown'
+    }
+);
+
+// Display the report
+console.log(response.report);
+console.log(`Research completed in ${response.durationMs}ms`);
 ```
 
-## 🔧 Development Setup
+## 📚 Features
 
-### Local Development
-```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+### 🤖 Multi-Agent Intelligence
+- **Query Analyzer**: Understands intent and develops research strategies
+- **Web Search Agent**: Discovers high-quality, relevant sources
+- **Content Extractor**: Processes and extracts key information
+- **Insight Generator**: Synthesizes findings into actionable insights
+- **Report Formatter**: Creates professional, structured reports
+- **Validation Agent**: Fact-checks and ensures accuracy
 
-# Install dependencies
-pip install -r requirements.txt
+### 📊 Output Formats
+- **Markdown**: Clean, formatted reports
+- **JSON**: Structured data for processing
+- **HTML**: Ready-to-embed reports
 
-# Run the application
-python -m uvicorn backend.main:app --reload
-```
+### 🔐 Enterprise Ready
+- SOC 2 Type II compliant
+- 99.9% uptime SLA
+- End-to-end encryption
+- GDPR compliant
+- SSO/SAML support
 
-### Running Tests
-```bash
-# Run all tests
-pytest
+### ⚡ Performance
+- Average response time: < 5 seconds
+- Process 50+ sources per query
+- Concurrent request handling
+- Global CDN distribution
 
-# Run with coverage
-pytest --cov=backend --cov-report=html
+## 💰 Pricing
 
-# Run specific test file
-pytest backend/tests/test_research.py
-```
+| Plan | Price | Queries/Month | Features |
+|------|-------|---------------|----------|
+| **Free** | $0 | 10 | Basic features, community support |
+| **Starter** | $29/mo | 100 | All features, email support |
+| **Professional** | $99/mo | 1,000 | Priority support, custom integrations |
+| **Enterprise** | Custom | Unlimited | SLA, dedicated support, on-premise option |
 
-### Code Quality
-```bash
-# Format code
-black backend
+View full pricing at [https://nsai-data.com/pricing](https://nsai-data.com/pricing)
 
-# Lint code
-flake8 backend
+## 📖 Documentation
 
-# Type checking
-mypy backend
-```
+### Guides
+- [Getting Started](https://docs.nsai-data.com/getting-started)
+- [Authentication](https://docs.nsai-data.com/authentication)
+- [API Reference](https://docs.nsai-data.com/api-reference)
+- [SDK Documentation](https://docs.nsai-data.com/sdks)
+- [Best Practices](https://docs.nsai-data.com/best-practices)
+- [Examples](https://docs.nsai-data.com/examples)
 
-## 📚 API Documentation
+### SDKs
+- [Python SDK](https://docs.nsai-data.com/sdks/python)
+- [JavaScript/TypeScript SDK](https://docs.nsai-data.com/sdks/javascript)
+- [Go SDK](https://docs.nsai-data.com/sdks/go) *(coming soon)*
+- [Java SDK](https://docs.nsai-data.com/sdks/java) *(coming soon)*
 
-### Core Endpoints
+## 🏢 Use Cases
 
-#### Create Research Query
-```http
-POST /api/v1/research/query
-Content-Type: application/json
+- **Market Research**: Analyze competitors, trends, and opportunities
+- **Academic Research**: Literature reviews and citation discovery
+- **Due Diligence**: Comprehensive background research
+- **Content Creation**: Research-backed articles and reports
+- **Business Intelligence**: Industry insights and analysis
+- **Legal Research**: Case law and precedent research
 
-{
-  "query": "What are the latest developments in quantum computing?",
-  "output_format": "markdown",
-  "max_sources": 10,
-  "enable_validation": true
-}
-```
+## 🛟 Support
 
-#### Get Research Status
-```http
-GET /api/v1/research/status/{research_id}
-```
+- 📧 Email: support@nsai-data.com
+- 💬 Chat: Available in-app for paid plans
+- 📚 Knowledge Base: [https://help.nsai-data.com](https://help.nsai-data.com)
+- 🐛 Bug Reports: [GitHub Issues](https://github.com/ehudso7/nsai-data/issues)
 
-#### Get Research History
-```http
-GET /api/v1/research/history?limit=10&offset=0
-```
+## 🔒 Security & Compliance
 
-## 🔐 Security Features
+- **Data Encryption**: AES-256 at rest, TLS 1.3 in transit
+- **Access Control**: OAuth 2.0, API key management
+- **Compliance**: SOC 2, GDPR, CCPA, HIPAA (Enterprise)
+- **Monitoring**: 24/7 security monitoring
+- **Auditing**: Complete audit logs
 
-- **Authentication**: JWT-based authentication system
-- **Rate Limiting**: Configurable per-endpoint rate limits
-- **Input Validation**: Comprehensive request validation
-- **HTTPS**: SSL/TLS encryption in production
-- **CORS**: Configurable CORS policies
-- **Security Headers**: OWASP recommended headers
-- **API Keys**: Secure API key management
-- **Monitoring**: Real-time security event monitoring
+## 📊 Status & Uptime
 
-## 📊 Performance Optimization
+Check our service status at [https://status.nsai-data.com](https://status.nsai-data.com)
 
-- **Caching**: Redis-based caching for frequent queries
-- **Async Processing**: Non-blocking I/O for all external calls
-- **Connection Pooling**: Optimized database connections
-- **Load Balancing**: Nginx reverse proxy configuration
-- **Resource Limits**: Container resource management
-- **Query Optimization**: Indexed database queries
+## 🤝 Enterprise Solutions
 
-## 🚀 Deployment
+For enterprise deployments, custom integrations, or on-premise options:
+- 📧 Email: enterprise@nsai-data.com
+- 📞 Schedule a demo: [https://nsai-data.com/demo](https://nsai-data.com/demo)
 
-### Railway Deployment
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
+## ⚖️ Legal
 
-# Deploy
-railway up
-```
+By using NSAI Data, you agree to our:
+- [Terms of Service](https://nsai-data.com/terms)
+- [Privacy Policy](https://nsai-data.com/privacy)
+- [Acceptable Use Policy](https://nsai-data.com/aup)
 
-### Manual Deployment
-```bash
-# Build Docker image
-docker build -t nsai-data:latest .
-
-# Run with environment file
-docker run -d \
-  --name nsai-data \
-  -p 8000:8000 \
-  --env-file .env \
-  nsai-data:latest
-```
-
-## 📈 Monitoring & Observability
-
-- **Prometheus Metrics**: http://localhost:9090
-- **Grafana Dashboards**: http://localhost:3000
-- **Structured Logging**: JSON formatted logs
-- **Health Checks**: `/health` endpoint
-- **Performance Metrics**: Request duration, throughput
-- **Error Tracking**: Sentry integration (optional)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- OpenAI for GPT-4 API
-- Firecrawl for web scraping capabilities
-- FastAPI community for the excellent framework
-- All contributors and testers
-
-## 📞 Support
-
-- Documentation: [docs.nsaidata.com](https://docs.nsaidata.com)
-- Issues: [GitHub Issues](https://github.com/ehudso7/nsai-data/issues)
-- Email: support@nsaidata.com
+**Important**: This software is licensed for use exclusively through the NSAI Data service at https://nsai-data.com. Self-hosting or running your own instance is strictly prohibited. See [LICENSE](LICENSE) for details.
 
 ---
 
-Built with ❤️ by Everton Hudson | [nsaidata.com](https://nsaidata.com)
+© 2025 NSAI Data, Inc. All rights reserved.
+
+**Built with ❤️ by Everton Hudson**

@@ -1,12 +1,8 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -26,146 +22,103 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
 .pytest_cache/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# PEP 582
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.env.local
-.env.*.local
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
+.coverage
+htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
 
-# Pyre type checker
-.pyre/
+# JavaScript/TypeScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+dist/
+.parcel-cache
+.next
+out/
+.nuxt
+.cache
+.vuepress/dist
+.temp
+.docusaurus
+*.tsbuildinfo
 
-# IDE
+# IDEs
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
 # OS
 .DS_Store
 Thumbs.db
+.Spotlight-V100
+.Trashes
+._*
 
-# Project specific
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+.nyc_output
+
+# Logs
 logs/
-*.db
-test.db
-data/
-plugins/*.wasm
-ssl/
-frontend/node_modules/
-frontend/.next/
-frontend/out/
+*.log
 
-# Secrets
-*.pem
-*.key
-*.crt
-secrets/
-
-# Temporary files
+# Temporary
 tmp/
 temp/
 *.tmp
 *.bak
 
-# Docker
-docker-compose.override.yml
+# SDK build artifacts
+sdk/python/build/
+sdk/python/dist/
+sdk/python/*.egg-info/
+sdk/javascript/dist/
+sdk/javascript/types/
 
-# Monitoring
-prometheus-data/
-grafana-data/
+# Documentation build
+docs/_build/
+docs/.doctrees/
 
-# Backups
-backups/
-*.backup
-*.sql
+# Secrets (never commit these!)
+*.pem
+*.key
+*.crt
+secrets/
+.secrets/
+
+# Local development
+.local/
+local-config/
+
+# Backend/Infrastructure (should not exist in this repo)
+backend/
+frontend/
+deployment/
+infrastructure/
+k8s/
+terraform/
+ansible/
+docker-compose.yml
+docker-compose.*.yml
+Dockerfile*
+nginx.conf
+*.tfstate
+*.tfvars

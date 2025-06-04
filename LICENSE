@@ -1,21 +1,45 @@
-MIT License
+NSAI Data Commercial License Agreement
 
-Copyright (c) 2025 Everton Hudson
+Copyright (c) 2025 NSAI Data, Inc. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+IMPORTANT: READ CAREFULLY
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This Commercial License Agreement ("Agreement") is a legal agreement between you (either an individual or a single entity) and NSAI Data, Inc. ("NSAI Data") for the NSAI Data software, associated media, printed materials, and online or electronic documentation (collectively, the "Software").
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+By installing, copying, downloading, accessing, or otherwise using the Software, you agree to be bound by the terms of this Agreement. If you do not agree to the terms of this Agreement, do not install, access, or use the Software.
+
+1. GRANT OF LICENSE
+   Subject to your compliance with this Agreement and payment of applicable fees, NSAI Data grants you a limited, non-exclusive, non-transferable, revocable license to use the NSAI Data API and SDKs solely through the official NSAI Data service at https://nsai-data.com.
+
+2. RESTRICTIONS
+   You may NOT:
+   a) Host, deploy, or run the Software on your own servers or infrastructure
+   b) Modify, reverse engineer, decompile, or disassemble the Software
+   c) Create derivative works based on the Software
+   d) Redistribute, sublicense, rent, lease, or lend the Software
+   e) Use the Software to create a competing service
+   f) Remove or alter any proprietary notices or labels
+   g) Use the Software in any way that violates applicable laws
+
+3. INTELLECTUAL PROPERTY
+   The Software is licensed, not sold. NSAI Data retains all right, title, and interest in and to the Software, including all intellectual property rights therein.
+
+4. FEES AND PAYMENT
+   Use of the Software requires payment of fees as described at https://nsai-data.com/pricing. You agree to pay all applicable fees and charges.
+
+5. TERMINATION
+   This Agreement is effective until terminated. NSAI Data may terminate this Agreement immediately if you breach any provision. Upon termination, you must cease all use of the Software and destroy all copies.
+
+6. DISCLAIMER OF WARRANTIES
+   THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+
+7. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL NSAI DATA BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE.
+
+8. GOVERNING LAW
+   This Agreement shall be governed by the laws of the State of Delaware, USA, without regard to its conflict of law principles.
+
+9. ENTIRE AGREEMENT
+   This Agreement constitutes the entire agreement between you and NSAI Data relating to the Software and supersedes all prior or contemporaneous understandings.
+
+For questions about this license, please contact: legal@nsai-data.com
