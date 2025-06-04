@@ -1,124 +1,79 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-.pytest_cache/
-.coverage
-htmlcov/
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# JavaScript/TypeScript
+# Dependencies
 node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+/.nyc_output
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+/dist
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 .pnpm-debug.log*
-dist/
-.parcel-cache
-.next
-out/
-.nuxt
-.cache
-.vuepress/dist
-.temp
-.docusaurus
+
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
 *.tsbuildinfo
+next-env.d.ts
+
+# Python SDK
+sdk/python/__pycache__/
+sdk/python/*.py[cod]
+sdk/python/*$py.class
+sdk/python/*.so
+sdk/python/.Python
+sdk/python/build/
+sdk/python/develop-eggs/
+sdk/python/dist/
+sdk/python/downloads/
+sdk/python/eggs/
+sdk/python/.eggs/
+sdk/python/lib/
+sdk/python/lib64/
+sdk/python/parts/
+sdk/python/sdist/
+sdk/python/var/
+sdk/python/wheels/
+sdk/python/*.egg-info/
+sdk/python/.installed.cfg
+sdk/python/*.egg
+
+# JavaScript SDK
+sdk/javascript/node_modules/
+sdk/javascript/dist/
+sdk/javascript/*.log
 
 # IDEs
 .idea/
 .vscode/
 *.swp
 *.swo
-*~
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
 
 # OS
-.DS_Store
 Thumbs.db
-.Spotlight-V100
-.Trashes
-._*
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# Testing
-coverage/
-.nyc_output
-
-# Logs
-logs/
-*.log
 
 # Temporary
 tmp/
 temp/
 *.tmp
 *.bak
-
-# SDK build artifacts
-sdk/python/build/
-sdk/python/dist/
-sdk/python/*.egg-info/
-sdk/javascript/dist/
-sdk/javascript/types/
-
-# Documentation build
-docs/_build/
-docs/.doctrees/
-
-# Secrets (never commit these!)
-*.pem
-*.key
-*.crt
-secrets/
-.secrets/
-
-# Local development
-.local/
-local-config/
-
-# Backend/Infrastructure (should not exist in this repo)
-backend/
-frontend/
-deployment/
-infrastructure/
-k8s/
-terraform/
-ansible/
-docker-compose.yml
-docker-compose.*.yml
-Dockerfile*
-nginx.conf
-*.tfstate
-*.tfvars
