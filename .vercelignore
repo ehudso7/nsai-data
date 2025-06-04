@@ -1,0 +1,29 @@
+# SDK and examples (not needed for deployment)
+/examples
+/sdk
+
+# Documentation
+*.md
+!README.md
+
+# Development files
+.env.example
+.env.local.example
+CONTRIBUTING.md
+TERMS_OF_SERVICE.md
+
+# Git
+.git
+.gitignore
+
+# Tests
+**/*.test.ts
+**/*.spec.ts
+**/tests
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
