@@ -5,8 +5,8 @@
 import * as Sentry from "@sentry/nextjs";
 
 // Only initialize Sentry if DSN is properly configured
-const dsn = "https://9cfe901a99e3845c88e5e6c83c688364@o4508954094075904.ingest.us.sentry.io/4509443307077632";
-const isValidDsn = dsn && dsn !== "YOUR_SENTRY_DSN_HERE";
+const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN || "";
+const isValidDsn = dsn && dsn.length > 0 && !dsn.includes("YOUR_SENTRY_DSN_HERE");
 
 if (isValidDsn) {
   Sentry.init({
