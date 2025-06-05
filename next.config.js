@@ -31,16 +31,12 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
-
-// Injected content via Sentry wizard below
-
-const { withSentryConfig } = require("@sentry/nextjs");
-
-// Only wrap with Sentry if auth token is present
-if (process.env.SENTRY_AUTH_TOKEN) {
+// Sentry configuration - only apply when auth token is present
+if (process.env.SENTRY_AUTH_TOKEN && process.env.SENTRY_AUTH_TOKEN !== 'YOUR_SENTRY_AUTH_TOKEN_HERE') {
+  const { withSentryConfig } = require("@sentry/nextjs");
+  
   module.exports = withSentryConfig(
-    module.exports,
+    nextConfig,
     {
       // For all available options, see:
       // https://www.npmjs.com/package/@sentry/webpack-plugin#options
@@ -75,4 +71,6 @@ if (process.env.SENTRY_AUTH_TOKEN) {
       authToken: process.env.SENTRY_AUTH_TOKEN,
     }
   );
+} else {
+  module.exports = nextConfig;
 }
