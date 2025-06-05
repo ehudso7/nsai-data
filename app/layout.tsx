@@ -10,6 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export function generateMetadata(): Metadata {
   return {
+    metadataBase: new URL('https://nsaidata.com'),
     title: 'NSAI Data - Enterprise Autonomous Research Platform',
     description: 'Transform complex questions into comprehensive research reports in seconds with AI-powered autonomous agents.',
     keywords: 'AI research, autonomous agents, research platform, data analysis, NSAI',

@@ -11,10 +11,9 @@ export default function SentryExamplePage() {
   }
 
   const triggerAsyncError = async () => {
-    const response = await fetch('/api/sentry-test')
-    if (!response.ok) {
-      throw new Error('API test error')
-    }
+    // Simulate an async error
+    await new Promise((resolve) => setTimeout(resolve, 100))
+    throw new Error('Async test error from NSAI Data!')
   }
 
   const triggerTypeError = () => {
