@@ -63,6 +63,7 @@ REDIS_URL=redis://...                # Redis connection
 JWT_SECRET=xxxxx                     # JWT signing secret
 STRIPE_SECRET_KEY=sk_live_xxxxx      # Stripe secret key
 SENDGRID_API_KEY=SG.xxxxx           # SendGrid API key
+SENTRY_AUTH_TOKEN=xxxxx              # Sentry auth token for source maps
 ```
 
 ## Vercel Configuration

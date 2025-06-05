@@ -69,5 +69,9 @@ module.exports = withSentryConfig(
     // https://docs.sentry.io/product/crons/
     // https://vercel.com/docs/cron-jobs
     automaticVercelMonitors: true,
+
+    // Disable source map uploading if auth token is not present
+    authToken: process.env.SENTRY_AUTH_TOKEN,
+    dryRun: !process.env.SENTRY_AUTH_TOKEN,
   }
 );
