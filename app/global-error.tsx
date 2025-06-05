@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function GlobalError({ error }: { error: Error & { digest?: string } }) {
   useEffect(() => {
     // Only capture exception if Sentry is initialized
-    if (typeof window !== 'undefined' && window.__sentryRewritesTunnelPath__) {
+    if (typeof window !== 'undefined' && typeof Sentry !== 'undefined' && Sentry.captureException) {
       Sentry.captureException(error);
     } else {
       // Fallback to console.error if Sentry is not initialized
