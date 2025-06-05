@@ -5,13 +5,21 @@
 
 import * as Sentry from "@sentry/nextjs";
 
-Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN || "YOUR_SENTRY_DSN_HERE",
+// Only initialize Sentry if DSN is properly configured and not the placeholder
+const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
+const isValidDsn = dsn && dsn !== "YOUR_SENTRY_DSN_HERE";
 
-  // Performance Monitoring
-  tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
+if (isValidDsn) {
+  Sentry.init({
+    dsn: dsn,
 
-  // Additional Options
-  environment: process.env.NODE_ENV,
-  debug: false,
-});
+    // Performance Monitoring
+    tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
+
+    // Additional Options
+    environment: process.env.NODE_ENV,
+    debug: false,
+  });
+} else {
+  console.log("Sentry edge initialization skipped: No valid DSN configured");
+}

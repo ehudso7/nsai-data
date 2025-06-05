@@ -4,37 +4,45 @@
 
 import * as Sentry from "@sentry/nextjs";
 
-Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN || "YOUR_SENTRY_DSN_HERE",
+// Only initialize Sentry if DSN is properly configured and not the placeholder
+const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
+const isValidDsn = dsn && dsn !== "YOUR_SENTRY_DSN_HERE";
 
-  // Performance Monitoring
-  tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
-  
-  // Session Replay
-  replaysSessionSampleRate: 0.1,
-  replaysOnErrorSampleRate: 1.0,
+if (isValidDsn) {
+  Sentry.init({
+    dsn: dsn,
 
-  // Release Health
-  integrations: [
-    Sentry.replayIntegration({
-      maskAllText: true,
-      blockAllMedia: true,
-    }),
-  ],
+    // Performance Monitoring
+    tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
+    
+    // Session Replay
+    replaysSessionSampleRate: 0.1,
+    replaysOnErrorSampleRate: 1.0,
 
-  // Additional Options
-  environment: process.env.NODE_ENV,
-  debug: false,
-  
-  // Filter out non-app errors
-  beforeSend(event, hint) {
-    // Filter out errors from browser extensions
-    if (event.exception && event.exception.values?.[0]?.stacktrace?.frames) {
-      const frames = event.exception.values[0].stacktrace.frames;
-      if (frames.some(frame => frame.filename?.includes('extension://'))) {
-        return null;
+    // Release Health
+    integrations: [
+      Sentry.replayIntegration({
+        maskAllText: true,
+        blockAllMedia: true,
+      }),
+    ],
+
+    // Additional Options
+    environment: process.env.NODE_ENV,
+    debug: false,
+    
+    // Filter out non-app errors
+    beforeSend(event, hint) {
+      // Filter out errors from browser extensions
+      if (event.exception && event.exception.values?.[0]?.stacktrace?.frames) {
+        const frames = event.exception.values[0].stacktrace.frames;
+        if (frames.some(frame => frame.filename?.includes('extension://'))) {
+          return null;
+        }
       }
-    }
-    return event;
-  },
-});
+      return event;
+    },
+  });
+} else {
+  console.log("Sentry client initialization skipped: No valid DSN configured");
+}
