@@ -28,6 +28,12 @@ yarn-error.log*
 # Local env files
 .env*.local
 .env
+.env.development
+.env.test
+# Allow example and production template
+!.env.example
+!.env.local.example
+!.env.production
 
 # Vercel
 .vercel
