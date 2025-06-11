@@ -5,6 +5,7 @@ import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { Providers } from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,7 +45,9 @@ export default function RootLayout({
         <GoogleAnalytics />
       </head>
       <body className={inter.className}>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
         <Analytics />
         <SpeedInsights />
       </body>

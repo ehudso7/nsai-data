@@ -83,5 +83,19 @@ tmp/
 temp/
 *.tmp
 *.bak
+
+# Internal/Development
+.claude/
+*INTERNAL*
+*DEVELOPMENT*
+*TODO*
+*NOTES*
+template.md
+prompt.md
+rules.md
+claude.md
+project.md
 # Sentry Config File
 .env.sentry-build-plugin
+
+/lib/generated/prisma

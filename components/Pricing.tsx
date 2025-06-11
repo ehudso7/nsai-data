@@ -1,4 +1,11 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { useSession } from 'next-auth/react'
+
 export function Pricing() {
+  const router = useRouter()
+  const { data: session } = useSession()
   const plans = [
     {
       name: "Free",
@@ -97,6 +104,13 @@ export function Pricing() {
                 ))}
               </ul>
               <button
+                onClick={() => {
+                  if (plan.name === 'Enterprise') {
+                    window.location.href = 'mailto:sales@nsaidata.com?subject=Enterprise Plan Inquiry'
+                  } else {
+                    router.push(session ? '/dashboard' : '/register')
+                  }
+                }}
                 className={`w-full py-3 rounded-lg font-semibold transition ${
                   plan.highlighted
                     ? 'bg-primary-600 text-white hover:bg-primary-700'
